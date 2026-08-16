@@ -1,0 +1,82 @@
+{
+  "position": "bottom",
+  "spacing": 0,
+  "height": 0,
+  "reload_style_on_change": true,
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/mode"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "bluetooth",
+    "network",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
+  "hyprland/window": {
+    "max-length": 50
+  },
+  "bluetooth": {
+    "format": "bth",
+    "format-connected": "bth",
+    "format-disabled": "bth off",
+    "format-no-controller": "bth none",
+    "tooltip": false,
+    "on-click": "kitty --class bluetui -e bluetui"
+  },
+  "cpu": {
+    "format": "cpu {usage}%",
+    "interval": 2,
+    "states": {
+      "critical": 90
+    },
+    "tooltip": false
+  },
+  "memory": {
+    "format": "mem {percentage}%",
+    "interval": 2,
+    "states": {
+      "critical": 80
+    },
+    "on-click":"kitty --class btop -e btop",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "bat {capacity}%",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": "wifi {bandwidthDownBits}",
+    "format-ethernet": "eth {bandwidthDownBits}",
+    "format-disconnected": "no network",
+    "interval": 5,
+    "tooltip": false,
+    "on-click":"kitty --class impala -e impala"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "vol {volume}%",
+    "format-bluetooth": "vol {volume}%",
+    "nospacing": 1,
+    "on-click": "kitty --class wiremix -e wiremix",
+    "tooltip": false
+  },
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "tooltip": false,
+    "interval": 1
+  }
+}
